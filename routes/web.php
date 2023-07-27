@@ -29,7 +29,9 @@ Route::get('/users', function () {
 Route::get('/teachers', function () {
     return Inertia::render('Teachers',
     [
-        'teachers' => Teacher::all()
+        'teachers' => Teacher::all()->map->only(
+            'id', 'name', 'email', 'subjects_specialities', 'bio', 'hourly_rate', 'availability', 'location'
+            )
     ]
     );
 });
@@ -37,6 +39,8 @@ Route::get('/teachers', function () {
 Route::get('/students', function () {
     return Inertia::render('Students',
     [
-        'students' => Student::all()
+        'students' => Student::all()->map->only(
+            'id', 'name', 'email', 'subjects_interests', 'availability', 'location'
+            )
     ]);
 });

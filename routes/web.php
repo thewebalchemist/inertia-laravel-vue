@@ -1,5 +1,7 @@
 <?php
 
+use App\Models\Student;
+use App\Models\Teacher;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
@@ -23,3 +25,18 @@ Route::get('/users', function () {
     return Inertia::render('Users');
 });
 
+
+Route::get('/teachers', function () {
+    return Inertia::render('Teachers',
+    [
+        'teachers' => Teacher::all()
+    ]
+    );
+});
+
+Route::get('/students', function () {
+    return Inertia::render('Students',
+    [
+        'students' => Student::all()
+    ]);
+});

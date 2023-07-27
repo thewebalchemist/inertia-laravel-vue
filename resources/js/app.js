@@ -1,11 +1,31 @@
 const { createApp, h } = require('vue');
-const { createInertiaApp } = require('@inertiajs/inertia-vue3');
+const { createInertiaApp, Link, Head } = require('@inertiajs/inertia-vue3');
+const { InertiaProgress } = require('@inertiajs/progress')
+const Layout = require('./Shared/Layout.vue').default;
 
 createInertiaApp({
-  resolve: name => require(`./Pages/${name}`),
-  setup({ el, App, props, plugin }) {
+resolve: async name =>
+{
+    let page =  (await import(`./Pages/${name}`)).default;
+    page.layout = Layout;
+
+    return page;
+    },
+
+setup({ el, App, props, plugin }) {
     createApp({ render: () => h(App, props) })
-      .use(plugin)
-      .mount(el);
-  },
+    .use(plugin)
+    .component('Link', Link)
+    .component('Head', Head)
+    .mount(el);
+},
+
+title: title => 'My App - ' + title,
 });
+
+
+InertiaProgress.init(
+    {
+        showSpinner: true,
+    }
+)

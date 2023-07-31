@@ -7,7 +7,7 @@
             <p class="font-light text-gray-500 lg:mb-16 sm:text-xl dark:text-gray-400">Explore the whole collection of open-source web components and elements built with the utility classes from Tailwind</p>
         </div>
         <div class="grid gap-8 mb-6 lg:mb-16 md:grid-cols-2">
-            <div v-for="teacher in teachers" :key="teacher.id" class="items-center bg-gray-50 rounded-lg shadow sm:flex dark:bg-gray-800 dark:border-gray-700">
+            <div v-for="teacher in teachers.data" :key="teacher.id" class="items-center bg-gray-50 rounded-lg shadow sm:flex dark:bg-gray-800 dark:border-gray-700">
                 <div class="block w-48 sm:w-auto h-full">
                     <img class="w-full h-full rounded-lg sm:rounded-none sm:rounded-l-lg object-cover object-center" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/bonnie-green.png" alt="Bonnie Avatar">
                 </div>
@@ -51,15 +51,21 @@
                 </div>
             </div>
         </div>
+    <div class="flex justify-end">
+        <Pagination :links="teachers.links" />
+    </div>
     </div>
     </section>
+
+
     </div>
 </template>
 
 <script setup>
+import Pagination from '../Shared/Pagination.vue';
 defineProps({
     teachers: {
-        type: Array,
+        type: Object,
     }
 })
 function getShortBio(bio) {

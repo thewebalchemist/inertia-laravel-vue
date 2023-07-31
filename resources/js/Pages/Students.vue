@@ -2,12 +2,25 @@
     <div>
     <section class="bg-white dark:bg-gray-900">
     <div class="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-6">
-        <div class="mx-auto mb-8 max-w-screen-sm lg:mb-16">
+        <div class="mx-auto mb-8 max-w-screen-sm lg:mb-16 space-y-10">
             <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Students Database</h2>
             <p class="font-light text-gray-500 sm:text-xl dark:text-gray-400">Explore the whole collection of open-source web components and elements built with the utility classes from Tailwind</p>
+
+            <form>
+                <label for="search" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
+                <div class="relative">
+                    <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                        <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
+                        </svg>
+                    </div>
+                    <input v-model="search" type="search" id="search" class="block w-full p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search" required>
+                    <button type="submit" class="text-white absolute right-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Search</button>
+                </div>
+            </form>
         </div>
         <div class="grid gap-8 lg:gap-16 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-            <div v-for="student in students" :key="student.id" class="text-center text-gray-500 dark:text-gray-400">
+            <div v-for="student in students.data" :key="student.id" class="text-center text-gray-500 dark:text-gray-400">
                 <img class="mx-auto mb-4 w-36 h-36 rounded-full" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/bonnie-green.png" alt="Bonnie Avatar">
                 <h3 class="mb-1 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
                     <a href="#">{{ student.name }}</a>
@@ -37,15 +50,30 @@
                 </ul>
             </div>
         </div>
+        <div class="flex justify-end">
+            <Pagination :links="students.links" />
+        </div>
     </div>
 </section>
     </div>
 </template>
 
 <script setup>
-defineProps({
-    students: {
-        type: Array,
-    }
-})
+import Pagination from '../Shared/Pagination.vue';
+import { ref, watch } from 'vue';
+import { Inertia } from '@inertiajs/inertia';
+
+let props = defineProps({
+    students:  Object,
+    filters: Object,
+});
+
+let search = ref(props.filters.search);
+
+watch(search, value => {
+    Inertia.get('/students', { search: value }, {
+        preserveState: true,
+        replace: true,
+    });
+});
 </script>

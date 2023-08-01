@@ -17,4 +17,10 @@ class Student extends Model
         'subjects_interests',
         'location',
     ];
+
+
+    public function setPasswordAttribute($password)
+    {
+        $this->attributes['password'] = bcrypt($password);
+    }
 }

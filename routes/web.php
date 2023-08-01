@@ -47,7 +47,7 @@ Route::get('/teachers', function () {
 });
 
 Route::get('/students', function () {
-    return Inertia::render('Students',
+    return Inertia::render('Students/Index',
     [
         'students' => Student::query()
         ->when(Request::input('search'), function ($query, $search)
@@ -72,4 +72,21 @@ Route::get('/students', function () {
         'filters' => Request::only(['search']),
 
     ]);
+});
+
+
+Route::get('/students/create', function (){
+    return Inertia::render('Students/Create');
+});
+
+
+Route::post('/students', function () {
+    $attributes = Request::validate([
+        'name' => 'required',
+        'email' => ['required', 'email'],
+        'password' => 'required'
+    ]);
+    Student::create($attributes);
+
+    return redirect('/students');
 });

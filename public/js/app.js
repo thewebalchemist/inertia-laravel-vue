@@ -433,13 +433,21 @@ var map = {
 		"./resources/js/Pages/Home.vue",
 		"resources_js_Pages_Home_vue"
 	],
-	"./Students": [
-		"./resources/js/Pages/Students.vue",
-		"resources_js_Pages_Students_vue"
+	"./Students/Create": [
+		"./resources/js/Pages/Students/Create.vue",
+		"resources_js_Pages_Students_Create_vue"
 	],
-	"./Students.vue": [
-		"./resources/js/Pages/Students.vue",
-		"resources_js_Pages_Students_vue"
+	"./Students/Create.vue": [
+		"./resources/js/Pages/Students/Create.vue",
+		"resources_js_Pages_Students_Create_vue"
+	],
+	"./Students/Index": [
+		"./resources/js/Pages/Students/Index.vue",
+		"resources_js_Pages_Students_Index_vue"
+	],
+	"./Students/Index.vue": [
+		"./resources/js/Pages/Students/Index.vue",
+		"resources_js_Pages_Students_Index_vue"
 	],
 	"./Teachers": [
 		"./resources/js/Pages/Teachers.vue",

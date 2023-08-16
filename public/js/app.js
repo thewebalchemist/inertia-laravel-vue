@@ -433,6 +433,22 @@ var map = {
 		"./resources/js/Pages/Auth/Login.vue",
 		"resources_js_Pages_Auth_Login_vue"
 	],
+	"./Blogs/Index": [
+		"./resources/js/Pages/Blogs/Index.vue",
+		"resources_js_Pages_Blogs_Index_vue"
+	],
+	"./Blogs/Index.vue": [
+		"./resources/js/Pages/Blogs/Index.vue",
+		"resources_js_Pages_Blogs_Index_vue"
+	],
+	"./Blogs/SingleBlog": [
+		"./resources/js/Pages/Blogs/SingleBlog.vue",
+		"resources_js_Pages_Blogs_SingleBlog_vue"
+	],
+	"./Blogs/SingleBlog.vue": [
+		"./resources/js/Pages/Blogs/SingleBlog.vue",
+		"resources_js_Pages_Blogs_SingleBlog_vue"
+	],
 	"./Home": [
 		"./resources/js/Pages/Home.vue",
 		"resources_js_Pages_Home_vue"

@@ -433,13 +433,47 @@ var map = {
 		"./resources/js/Pages/Auth/Login.vue",
 		"resources_js_Pages_Auth_Login_vue"
 	],
+	"./Blogs/Calculator": [
+		"./resources/js/Pages/Blogs/Calculator.vue",
+		"resources_js_Pages_Blogs_Calculator_vue"
+	],
+	"./Blogs/Calculator.vue": [
+		"./resources/js/Pages/Blogs/Calculator.vue",
+		"resources_js_Pages_Blogs_Calculator_vue"
+	],
+	"./Blogs/Create": [
+		"./resources/js/Pages/Blogs/Create.vue",
+		"resources_js_Pages_Blogs_Create_vue"
+	],
+	"./Blogs/Create.vue": [
+		"./resources/js/Pages/Blogs/Create.vue",
+		"resources_js_Pages_Blogs_Create_vue"
+	],
+	"./Blogs/Edit": [
+		"./resources/js/Pages/Blogs/Edit.vue",
+		"resources_js_Pages_Blogs_Edit_vue"
+	],
+	"./Blogs/Edit.vue": [
+		"./resources/js/Pages/Blogs/Edit.vue",
+		"resources_js_Pages_Blogs_Edit_vue"
+	],
 	"./Blogs/Index": [
 		"./resources/js/Pages/Blogs/Index.vue",
+		"/js/vendor",
 		"resources_js_Pages_Blogs_Index_vue"
 	],
 	"./Blogs/Index.vue": [
 		"./resources/js/Pages/Blogs/Index.vue",
+		"/js/vendor",
 		"resources_js_Pages_Blogs_Index_vue"
+	],
+	"./Blogs/Show": [
+		"./resources/js/Pages/Blogs/Show.vue",
+		"resources_js_Pages_Blogs_Show_vue"
+	],
+	"./Blogs/Show.vue": [
+		"./resources/js/Pages/Blogs/Show.vue",
+		"resources_js_Pages_Blogs_Show_vue"
 	],
 	"./Blogs/SingleBlog": [
 		"./resources/js/Pages/Blogs/SingleBlog.vue",

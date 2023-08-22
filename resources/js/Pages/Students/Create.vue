@@ -65,6 +65,7 @@ defineProps({
     errors: Object
 })
 
+
 let form = useForm({
     name: '',
     email: '',
@@ -73,7 +74,6 @@ let form = useForm({
     availability: '',
     password: '',
 });
-
 
 let submit = () => {
     form.post('/students');

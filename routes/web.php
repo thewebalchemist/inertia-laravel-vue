@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\BlogController;
 use App\Models\Student;
 use App\Models\Teacher;
 use Illuminate\Support\Facades\Route;
@@ -11,6 +12,13 @@ use Inertia\Inertia;
 Route::get('login', [LoginController::class, 'create'])->name('login');
 Route::post('login', [LoginController::class, 'store']);
 
+Route::get('/blog', [BlogController::class, 'index'])->name('blog.index');
+Route::get('/blog/create', [BlogController::class, 'create'])->name('blog.create');
+Route::post('/blog', [BlogController::class, 'store'])->name('blog.store');
+Route::get('/blog/{id}', [BlogController::class, 'show'])->name('blog.show');
+Route::get('/blog/{id}/edit', [BlogController::class, 'edit'])->name('blog.edit');
+Route::put('/blog/{id}', [BlogController::class, 'update'])->name('blog.update');
+
 Route::middleware('auth')->group(function () {
 
 
@@ -20,7 +28,6 @@ Route::get('/', function () {
     return Inertia::render('Home');
 });
 
-
 Route::get('/users', function () {
     return Inertia::render('Users');
 });
@@ -29,10 +36,9 @@ Route::get('/blogs', function () {
     return Inertia::render('Blogs/Index');
 });
 
-Route::get('/blog/single-blog', function () {
-    return Inertia::render('Blogs/SingleBlog');
+Route::get('/write', function () {
+    return Inertia::render('Blogs/Create');
 });
-
 
 Route::get('/teachers', function () {
     return Inertia::render('Teachers',

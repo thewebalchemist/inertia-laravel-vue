@@ -20,7 +20,7 @@
                         </div>
                     </div>
                 </address>
-                <h1 class="mb-4 text-3xl font-extrabold leading-tight text-gray-900 lg:mb-6 lg:text-4xl dark:text-white">Best practices for successful prototypes</h1>
+                <h1 class="mb-4 text-3xl font-extrabold leading-tight text-gray-900 lg:mb-6 lg:text-4xl dark:text-white"><h2>{{ post.title }}</h2></h1>
             </header>
             <p class="lead">Flowbite is an open-source library of UI components built with the utility-first
                 classes from Tailwind CSS. It also includes interactive elements such as dropdowns, modals,
@@ -483,3 +483,12 @@
     </section>
         </section>
     </template>
+
+
+<script setup>
+import { ref, onMounted } from 'vue';
+import { usePage } from '@inertiajs/inertia-vue3';
+
+const { props } = usePage();
+const post = ref(props.post);
+</script>

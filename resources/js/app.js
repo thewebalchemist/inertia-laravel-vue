@@ -3,6 +3,8 @@ const { createInertiaApp, Link, Head } = require('@inertiajs/inertia-vue3');
 const { InertiaProgress } = require('@inertiajs/progress')
 const Layout = require('./Shared/Layout.vue').default;
 
+
+
 createInertiaApp({
 resolve: async name =>
 {

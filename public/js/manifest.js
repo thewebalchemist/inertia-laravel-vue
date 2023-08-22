@@ -107,7 +107,7 @@
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames not based on template
-/******/ 			if ({"resources_js_Pages_Auth_Login_vue":1,"resources_js_Pages_Blogs_Index_vue":1,"resources_js_Pages_Blogs_SingleBlog_vue":1,"resources_js_Pages_Home_vue":1,"resources_js_Pages_Students_Create_vue":1,"resources_js_Pages_Students_Index_vue":1,"resources_js_Pages_Teachers_vue":1,"resources_js_Pages_Users_vue":1}[chunkId]) return "js/" + chunkId + ".js";
+/******/ 			if ({"resources_js_Pages_Auth_Login_vue":1,"resources_js_Pages_Blogs_Calculator_vue":1,"resources_js_Pages_Blogs_Create_vue":1,"resources_js_Pages_Blogs_Edit_vue":1,"resources_js_Pages_Blogs_Index_vue":1,"resources_js_Pages_Blogs_Show_vue":1,"resources_js_Pages_Blogs_SingleBlog_vue":1,"resources_js_Pages_Home_vue":1,"resources_js_Pages_Students_Create_vue":1,"resources_js_Pages_Students_Index_vue":1,"resources_js_Pages_Teachers_vue":1,"resources_js_Pages_Users_vue":1}[chunkId]) return "js/" + chunkId + ".js";
 /******/ 			// return url for filenames based on template
 /******/ 			return undefined;
 /******/ 		};
@@ -299,6 +299,11 @@
 /******/ 		var chunkLoadingGlobal = self["webpackChunk"] = self["webpackChunk"] || [];
 /******/ 		chunkLoadingGlobal.forEach(webpackJsonpCallback.bind(null, 0));
 /******/ 		chunkLoadingGlobal.push = webpackJsonpCallback.bind(null, chunkLoadingGlobal.push.bind(chunkLoadingGlobal));
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/nonce */
+/******/ 	(() => {
+/******/ 		__webpack_require__.nc = undefined;
 /******/ 	})();
 /******/ 	
 /************************************************************************/

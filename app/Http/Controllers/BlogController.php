@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Blog;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session; // Import the Session facade
 use Inertia\Inertia;
 
 class BlogController extends Controller
@@ -54,10 +55,17 @@ class BlogController extends Controller
         return redirect()->route('blog.show', ['id' => $blog->id]);
     }
 
-    public function index()
+    public function index(Request $request)
     {
+        // Get the user's preferred active tab from the session, or set a default value
+        $activeTab = Session::get('active_tab', 0);
+
         $blogs = Blog::all();
 
-        return Inertia::render('Blogs/Index', ['blogs' => $blogs]);
+        // Pass the activeTab to the view
+        return Inertia::render('Blogs/Index', [
+            'blogs' => $blogs,
+            'activeTab' => $activeTab,
+        ]);
     }
 }

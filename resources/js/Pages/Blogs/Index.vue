@@ -10,31 +10,42 @@
         <section class="bg-white dark:bg-gray-900">
             <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
 
-                <section class="flex flex-col justify-between space-y-10 lg:p-10 border border-gray-400 rounded-3xl ">
+                <section class="flex flex-col justify-between space-y-10 lg:p-10 border border-gray-500 rounded-3xl ">
                     <div class="flex flex-row justify-between ">
                         <div class="text-start lg:mb-16 mb-8 max-auto max-w-prose">
                             <h2
-                                class="mb-4 text-3xl lg:text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">
-                                Our mission is to make knowledge and news accessible for everyone.</h2>
+                                class="mb-4 text-3xl lg:text-5xl tracking-tight font-extrabold text-gray-900 dark:text-white">
+                                Our mission is to make <span
+                                    class="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-blue-400">knowledge</span>
+                                and <span
+                                    class="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-blue-400">news</span>
+                                accessible for <span
+                                    class="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-blue-400">everyone</span>.
+                            </h2>
                             <p class="font-light text-gray-500 sm:text-xl dark:text-gray-400">We use an agile approach to
                                 test assumptions and connect with the needs of your audience early and often.</p>
                         </div>
                         <div>
                             <div class="flex mt-4 space-x-2 sm:justify-center sm:mt-0">
-                                <Link preserve-scroll href="#" class="flex items-center justify-center w-10 h-10 bg-blue-300/50 rounded-full">
-                                    <icons name="facebook" class="h-8" />
+                                <Link preserve-scroll href="#"
+                                    class="flex items-center justify-center w-10 h-10 bg-blue-300/50 rounded-full">
+                                <icons name="facebook" class="h-8" />
                                 </Link>
-                                <Link preserve-scroll href="#" class="flex items-center justify-center w-10 h-10 bg-blue-300/50 rounded-full">
-                                    <icons name="twitter" class="h-8" />
+                                <Link preserve-scroll href="#"
+                                    class="flex items-center justify-center w-10 h-10 bg-blue-300/50 rounded-full">
+                                <icons name="twitter" class="h-8" />
                                 </Link>
-                                <Link preserve-scroll href="#" class="flex items-center justify-center w-10 h-10 bg-blue-300/50 rounded-full">
-                                    <icons name="linkedin" class="h-8" />
+                                <Link preserve-scroll href="#"
+                                    class="flex items-center justify-center w-10 h-10 bg-blue-300/50 rounded-full">
+                                <icons name="linkedin" class="h-8" />
                                 </Link>
-                                <Link preserve-scroll href="#" class="flex items-center justify-center w-10 h-10 bg-red-300/50 rounded-full">
-                                    <icons name="youtube" class="h-8" />
+                                <Link preserve-scroll href="#"
+                                    class="flex items-center justify-center w-10 h-10 bg-red-300/50 rounded-full">
+                                <icons name="youtube" class="h-8" />
                                 </Link>
-                                <Link preserve-scroll href="#" class="flex items-center justify-center w-10 h-10 bg-red-300/50 rounded-full">
-                                    <icons name="instagram" class="h-8" />
+                                <Link preserve-scroll href="#"
+                                    class="flex items-center justify-center w-10 h-10 bg-red-300/50 rounded-full">
+                                <icons name="instagram" class="h-8" />
                                 </Link>
                             </div>
                         </div>
@@ -54,76 +65,77 @@
                                     </div>
                                     <input type="search" id="default-search"
                                         class="block w-full py-3 px-10 pl-10 text-sm text-gray-900 border border-gray-300 rounded-full bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                        placeholder="Search Mockups, Logos..." required>
+                                        placeholder="Search categories, articles..." required>
                                 </div>
                             </form>
                         </div>
                         <!-- Tab Interface -->
                         <div class="sm:hidden">
-                            <select id="tabs" v-model="activeTab"
-                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                                <option v-for="(category, index) in tabCategories" :key="index">{{ category }}</option>
-                            </select>
+                        <!-- Replace Link with select element -->
+                        <select id="tabs" v-model="activeTab"
+                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                            <option v-for="(category, index) in tabCategories" :key="index">{{ category }}</option>
+                        </select>
+                    </div>
 
-                        </div>
-                        <ul class="hidden text-sm font-medium text-center text-gray-500 sm:flex gap-2 dark:text-gray-400">
-                            <li v-for="(category, index) in tabCategories" :key="index" class="">
-                                <Link preserve-scroll @click="changeTab(index)"
-                                    :class="{ 'bg-gray-100': activeTab === index }" href="#"
-                                    class="inline-block w-full border border-gray-500 rounded-full py-3 px-4 focus:ring-2 focus:ring-blue-300 dark:focus:ring-blue-800 active focus:outline-none dark:bg-gray-800 dark:hover:bg-gray-700">
-                                {{ category }}
-                                </Link>
-                            </li>
-                        </ul>
+                    <ul class="hidden text-sm font-medium text-center text-gray-500 sm:flex gap-2 dark:text-gray-400">
+                        <li v-for="(category, index) in tabCategories" :key="index" class="">
+                            <!-- Replace Link with button element -->
+                            <button @click="changeTab(index)"
+                                :class="['inline-block w-full border rounded-full py-3 px-4 active focus:outline-none dark:bg-gray-800 dark:hover:bg-gray-700', { 'text-blue-400 border-blue-400': activeTab === index }]">
+                                {{ category === 'all' ? 'All' : category }}
+                            </button>
+                        </li>
+                    </ul>
+
                     </div>
                 </section>
 
                 <div class="py-10">
                     <!-- Blog Posts -->
-                        <div class="py-20">
-                            <div class="grid sm:grid-cols-1 lg:grid-cols-2 gap-10">
-                                <div v-for="blog in filteredBlogs" :key="blog.id"
-                                    class="w-full flex flex-col justify-between shadow dark:bg-gray-900 relative">
-                                    <a :href="'/blog/' + blog.id"
-                                        class="relative block w-full h-80 rounded-lg overflow-hidden">
-                                        <img class="object-cover w-full h-full" src="/images/6.jpg" :alt="blog.title" />
-                                        <!-- Category rounded container -->
-                                        <div
-                                            class="absolute bottom-2 left-2 bg-blue-700/70 text-white px-4 py-2 font-medium rounded-3xl">
-                                            {{ blog.category }}
-                                        </div>
-                                        <!-- Fire emoji and rounded circle -->
-                                        <div class="absolute top-0 right-0 mt-2 mr-2">
-                                            <div
-                                                class="flex items-center justify-center w-12 h-12 bg-orange-300/70 rounded-full">
-                                                <icons name="fire" class="h-10 " />
-                                            </div>
-                                        </div>
-                                    </a>
-                                    <div class="p-5">
-                                        <a :href="'/blog/' + blog.id"
-                                            class="text-xl font-bold text-gray-900 dark:text-white">{{ blog.title }}</a>
-                                        <p class="mt-2 text-gray-500 dark:text-gray-400">{{ truncatedContent(blog) }}</p>
-                                        <Link preserve-scroll :href="'/blog/' + blog.id"
-                                            class="inline-flex items-center px-3 py-2 mt-4 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                                        View Full Post
-                                        <svg class="w-3.5 h-3.5 ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                            fill="none" viewBox="0 0 14 10">
-                                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                                stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
-                                        </svg>
-                                        </Link>
+                    <div class="py-20">
+                        <div class="grid sm:grid-cols-1 lg:grid-cols-2 gap-10">
+                            <div v-for="(blog) in limitedFilteredBlogs" :key="blog.id"
+                                class="w-full flex flex-col justify-between shadow dark:bg-gray-900 relative">
+                                <a :href="'/blog/' + blog.id" class="relative block w-full h-80 rounded-lg overflow-hidden">
+                                    <img class="object-cover w-full h-full" src="/images/6.jpg" :alt="blog.title" />
+                                    <!-- Category rounded container -->
+                                    <div
+                                        class="absolute bottom-2 left-2 bg-blue-700/70 text-white px-4 py-2 font-medium rounded-3xl">
+                                        {{ blog.category }}
                                     </div>
+                                    <!-- Fire emoji and rounded circle -->
+                                    <div class="absolute top-0 right-0 mt-2 mr-2">
+                                        <div
+                                            class="flex items-center justify-center w-12 h-12 bg-orange-300/70 rounded-full">
+                                            <icons name="fire" class="h-10 " />
+                                        </div>
+                                    </div>
+                                </a>
+                                <div class="p-5">
+                                    <a :href="'/blog/' + blog.id" class="text-xl font-bold text-gray-900 dark:text-white">{{
+                                        blog.title }}</a>
+                                    <p class="mt-2 text-gray-500 dark:text-gray-400">{{ truncatedContent(blog) }}</p>
+                                    <Link preserve-scroll :href="'/blog/' + blog.id"
+                                        class="inline-flex items-center px-3 py-2 mt-4 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                                    View Full Post
+                                    <svg class="w-3.5 h-3.5 ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                        fill="none" viewBox="0 0 14 10">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                            stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
+                                    </svg>
+                                    </Link>
                                 </div>
                             </div>
                         </div>
+                    </div>
                 </div>
 
-                <calculator />
-
                 <section class="py-20">
-                    <h2 class="capitalize text-4xl text-center text-gray-400">
-                        In-depth articles for curious minds
+                    <h2 class="capitalize text-5xl text-center text-gray-200">
+                        In-depth articles for <span
+                            class="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-blue-400">curious
+                            minds</span>
                     </h2>
                     <div class="grid grid-cols-4 gap-10 py-10">
                         <div v-for="(category, index) in categories" :key="index"
@@ -135,6 +147,11 @@
                         </div>
                     </div>
                 </section>
+
+
+                <calculator />
+
+
                 <div class="py-8">
                     <div class="grid sm:grid-cols-1 lg:grid-cols-3 gap-10 ">
                         <div v-for="blog in wealthManagementPosts" :key="blog.id"
@@ -147,6 +164,8 @@
                                     <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{{
                                         blog.title }}</h5>
                                 </a>
+                                <!-- Display category below the image -->
+                                <p class="mb-1 text-sm text-gray-500 dark:text-gray-400">{{ blog.category }}</p>
                                 <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">{{ truncatedContent(blog) }}
                                 </p>
                                 <a :href="'/blog/' + blog.id"
@@ -160,6 +179,7 @@
                                 </a>
                             </div>
                         </div>
+
                     </div>
                 </div>
 
@@ -186,7 +206,7 @@
 
                 <aside aria-label="Related articles" class="py-8 lg:py-24 bg-gray-50 dark:bg-gray-900">
                     <div class="px-4 mx-auto max-w-screen-xl">
-                        <h2 class="mb-8 text-2xl font-bold text-gray-900 dark:text-white">Related articles</h2>
+                        <h2 class="mb-8 text-2xl font-bold text-gray-900 dark:text-white">Latest articles</h2>
                         <div class="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
                             <article v-for="blog in riskManagementPosts" :key="blog.id"
                                 class="max-w-xs flex flex-col justify-between">
@@ -305,6 +325,9 @@ export default {
                 // No category selected, show all blogs
                 return this.blogs;
             }
+        },
+        limitedFilteredBlogs() {
+            return this.filteredBlogs.slice(0, 2);
         },
         wealthManagementPosts() {
             // Filter blogs to include only those in the 'Wealth Management' category

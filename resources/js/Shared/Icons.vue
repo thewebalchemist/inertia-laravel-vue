@@ -14,6 +14,17 @@
     <img v-else-if="name === 'tiktok'" src="/images/tiktok.png" alt="tiktok" />
     <img v-else-if="name === 'youtube'" src="/images/youtube.png" alt="youtube" />
     <img v-else-if="name === 'whatsapp'" src="/images/whatsapp.png" alt="whatsapp" />
+    <img v-else-if="name === 'cost'" src="/images/cost.png" alt="cost calculator" />
+    <img v-else-if="name === 'inflation'" src="/images/inflation.png" alt="inflation calculator" />
+    <img v-else-if="name === 'grocery'" src="/images/grocery.png" alt="grocery calculator" />
+    <img v-else-if="name === 'travel'" src="/images/travel.png" alt="travel calculator" />
+    <img v-else-if="name === 'student'" src="/images/student.png" alt="student calculator" />
+    <img v-else-if="name === 'wedding'" src="/images/wedding.png" alt="wedding calculator" />
+    <img v-else-if="name === 'rent'" src="/images/rent.png" alt="rent calculator" />
+    <img v-else-if="name === 'networth'" src="/images/networth.png" alt="networth calculator" />
+    <img v-else-if="name === 'interest'" src="/images/interest.png" alt="interest calculator" />
+    <img v-else-if="name === 'payoff'" src="/images/payoff.png" alt="payoff calculator" />
+    <img v-else-if="name === 'retirement'" src="/images/retirement.png" alt="retirement calculator" />
 </template>
 
 <script>

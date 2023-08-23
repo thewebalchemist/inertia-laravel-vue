@@ -21,6 +21,8 @@
         "@inertiajs/inertia-vue3": "^0.6.0",
         "@inertiajs/progress": "^0.2.7",
         "oh-vue-icons": "^1.0.0-rc3",
-        "vue": "^3.2.36"
+        "vue": "^3.2.36",
+        "vue-carousel": "^0.18.0",
+        "vue-slick-carousel": "^1.0.6"
     }
 }

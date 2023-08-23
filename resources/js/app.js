@@ -5,6 +5,7 @@ const Layout = require('./Shared/Layout.vue').default;
 
 
 
+
 createInertiaApp({
 resolve: async name =>
 {
